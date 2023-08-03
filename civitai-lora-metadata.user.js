@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         CivitAI metadata grabber
-// @version      0.5
+// @version      0.6
 // @description  fetch metadata from civitai loras
 // @author       moonshinegloss
 // @match        https://*civitai.com/models/*
@@ -55,6 +55,9 @@ function replaceRunButton() {
               GM.xmlHttpRequest({
                   method: "GET",
                   url,
+                  redirect: "follow",
+                  anonymous: true,
+                  fetch: true,
                   headers: {
                       'Range': range,
                   },
